@@ -12,6 +12,7 @@ markdown = "^3.4.3"
 django-filter = "^23.2"
 django = "^4.2.3"
 psycopg2 = "^2.9.6"
+pillow = "^10.0.0"
 
 
 [build-system]
