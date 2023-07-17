@@ -12,7 +12,9 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - ./database:/var/lib/postgresql/data
+      - ./postgres-data:/var/lib/postgresql/data
+    networks:
+      - api-network
 
   api:
     container_name: api
@@ -26,5 +28,17 @@ services:
       "
     ports:
       - "8000:8000"
+    environment:
+      - DB_NAME=postgres
+      - DB_USER=postgres
+      - DB_PASSWORD=postgres
+      - DB_HOST=database
+      - DB_PORT=5432
     depends_on:
       - database
+    networks:
+      - api-network
+
+networks:
+  api-network:
+    driver: bridge
