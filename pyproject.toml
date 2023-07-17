@@ -4,7 +4,6 @@ version = "0.1.0"
 description = ""
 authors = ["Marcos Santos <marcos.diego.ns@outlook.com"]
 readme = "README.md"
-packages = [{include = "journey_miles"}]
 
 [tool.poetry.dependencies]
 python = "^3.11 || ^3.10"
