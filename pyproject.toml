@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "journey-miles"
+version = "0.1.0"
+description = ""
+authors = ["Marcos Santos <marcos.diego.ns@outlook.com"]
+readme = "README.md"
+packages = [{include = "journey_miles"}]
+
+[tool.poetry.dependencies]
+python = "^3.11 || ^3.10"
+djangorestframework = "^3.14.0"
+markdown = "^3.4.3"
+django-filter = "^23.2"
+django = "^4.2.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
