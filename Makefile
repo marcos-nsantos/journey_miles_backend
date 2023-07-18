@@ -6,3 +6,6 @@ migrate:
 
 make-migrations:
 	poetry run python -m core.manage makemigrations
+
+check:
+	poetry run python -m core.manage check
