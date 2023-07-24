@@ -4,6 +4,7 @@ from drf_yasg import openapi
 from drf_yasg.views import get_schema_view
 from rest_framework import routers
 
+from apps.trip.views.destiny_view_set import DestinyViewSet
 from apps.trip.views.statement_home_list_view import StatementHomeListView
 from apps.trip.views.statement_view_set import StatementViewSet
 
@@ -16,15 +17,15 @@ schema_view = get_schema_view(
 )
 
 router = routers.DefaultRouter()
-router.register(r'trip', StatementViewSet)
+router.register(r'statement', StatementViewSet)
+router.register(r'destiny', DestinyViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
     path('admin/', admin.site.urls),
 
-    path('trip-list-home/', StatementHomeListView.as_view(), name='trip-list-home'),
+    path('statement-list-home/', StatementHomeListView.as_view(), name='statement-list-home'),
 
-    # Swagger
     re_path(r'^swagger(?P<format>\.json|\.yaml)$', schema_view.without_ui(cache_timeout=0), name='schema-json'),
     re_path(r'^swagger/$', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     re_path(r'^redoc/$', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
