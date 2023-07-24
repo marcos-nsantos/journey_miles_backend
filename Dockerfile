@@ -13,5 +13,5 @@ RUN poetry install
 
 COPY . .
 
-CMD ["make", "migrate"]
-CMD ["make", "run-server"]
+CMD ["poetry", "run", "python", "manage.py", "migrate"]
+CMD ["poetry", "run", "python", "manage.py", "runserver", "0.0.0.0:8000"]
