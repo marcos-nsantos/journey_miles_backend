@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from core.apps.statement.models import Statement
+from apps.statement.models import Statement
 
 
 class StatementSerializer(serializers.ModelSerializer):

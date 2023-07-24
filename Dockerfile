@@ -12,3 +12,6 @@ RUN poetry config virtualenvs.create false
 RUN poetry install
 
 COPY . .
+
+CMD ["make", "migrate"]
+CMD ["make", "run-server"]

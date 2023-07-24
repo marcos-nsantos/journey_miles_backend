@@ -4,8 +4,8 @@ from drf_yasg import openapi
 from drf_yasg.views import get_schema_view
 from rest_framework import routers
 
-from core.apps.statement.views.statement_home_list_view import StatementHomeListView
-from core.apps.statement.views.statement_view_set import StatementViewSet
+from apps.statement.views.statement_home_list_view import StatementHomeListView
+from apps.statement.views.statement_view_set import StatementViewSet
 
 schema_view = get_schema_view(
     openapi.Info(

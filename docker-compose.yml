@@ -20,12 +20,6 @@ services:
     container_name: api
     build: .
     restart: always
-    command: >
-      sh -c "
-        cd /app &&
-        poetry run python -m core.manage migrate &&
-        poetry run python -m core.manage runserver 0.0.0.0:8000
-      "
     ports:
       - "8000:8000"
     environment:
