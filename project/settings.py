@@ -27,7 +27,7 @@ INSTALLED_APPS = [
     'drf_yasg',
 
     # Local Apps
-    'apps.statement',
+    'apps.trip',
 ]
 
 MIDDLEWARE = [

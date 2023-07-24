@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from apps.statement.models import Statement
+from apps.trip.models import Statement
 
 
 class StatementSerializer(serializers.ModelSerializer):

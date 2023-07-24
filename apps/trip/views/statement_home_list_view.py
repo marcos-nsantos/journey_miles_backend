@@ -1,7 +1,7 @@
 from rest_framework import generics
 
-from apps.statement.models.statement_model import Statement
-from apps.statement.serializer.statement_serializer import StatementSerializer
+from apps.trip.models.statement_model import Statement
+from apps.trip.serializer.statement_serializer import StatementSerializer
 
 
 class StatementHomeListView(generics.ListAPIView):
