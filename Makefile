@@ -1,5 +1,5 @@
 run-server:
-	poetry run python -m manage runserver
+	poetry run python -m manage runserver 0.0.0.0:8000
 
 migrate:
 	poetry run python -m manage migrate
