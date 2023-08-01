@@ -1,9 +1,14 @@
-FROM python:3.11.4
+FROM python:3.11.4-alpine
 
 ENV PYTHONUNBUFFERED 1
 ENV PYTHONDONTWRITEBYTECODE 1
 
-RUN mkdir /app
+RUN apk add --no-cache --update --virtual .build-deps \
+    build-base \
+    python3-dev \
+    make \
+    && rm -rf /var/cache/apk/*
+
 WORKDIR /app
 COPY pyproject.toml poetry.lock ./
 
@@ -13,5 +18,4 @@ RUN poetry install
 
 COPY . .
 
-CMD ["poetry", "run", "python", "manage.py", "migrate"]
-CMD ["poetry", "run", "python", "manage.py", "runserver", "0.0.0.0:8000"]
+ENTRYPOINT ["/app/entrypoint.sh"]
